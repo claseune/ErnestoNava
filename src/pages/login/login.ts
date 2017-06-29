@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
-import { ToastController, IonicPage, NavController, NavParams } from 'ionic-angular';
+import { ToastController, IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import * as firebase from 'firebase';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+
 
 @IonicPage()
 @Component({
@@ -11,7 +14,7 @@ import * as firebase from 'firebase';
 export class LoginPage {
   private data: FormGroup;
 
-  constructor(public navCtrl: NavController, public formBuilder: FormBuilder, public navParams: NavParams, public toastCtrl: ToastController) {
+  constructor(public Angfiat: AngularFireAuth, public navCtrl: NavController, public formBuilder: FormBuilder, public navParams: NavParams, public toastCtrl: ToastController) {
   this.data = this.formBuilder.group({
       username: ['', Validators.required],
       password: ['', Validators.required]
@@ -42,6 +45,11 @@ public showToast(text, time) {
         this.showToast(error.message, 4000);
         console.log(error.message)
       })
+  }
+
+  loginFace(){
+    this.Angfiat.auth.signInWithPopup(new firebase.auth.FacebookAuthProvider())
+    .then(res=>console.log(res));
   }
 
   ionViewDidLoad() {

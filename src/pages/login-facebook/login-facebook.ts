@@ -36,8 +36,8 @@ public showToast(text, time) {
       this.showToast('Se ha ingresado con Facebook correctamente', 6000);
       //this.showToast(result + ' ' + user + ' ' + token, 6000);
     }).catch(function (error) {
-      this.showToast(error.message, 6000);
-      console.log('Error: ' + error.message);
+      //this.showToast(error.message, 6000);
+      console.log('Error: ' + error);
     })
   }
 
