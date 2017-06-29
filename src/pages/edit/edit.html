@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Edit</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+<div>
+  <form [(formGroup)]="editFormData" #editForm="ngForm" id="edit-form" >
+    <ion-item>
+      <ion-label fixed>Nombre</ion-label>
+      <ion-input formControlName="nombre" type="text" value=""></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Apellido</ion-label>
+      <ion-input formControlName="apellido" type="text" value=""></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>Hobby</ion-label>
+      <ion-input formControlName="hobby" type="text" value=""></ion-input>
+    </ion-item>
+    <button ion-button block (click)="goEdit()" form="editFormData" id="edit-form">Editar</button>
+  </form>
+  </div>
+</ion-content>

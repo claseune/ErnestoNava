@@ -1,0 +1,35 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Gestos</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<ion-card (swipe)='Nswipe($event)'>
+    <ion-item>
+      Deslizado: {{swipe}}
+  </ion-item>
+</ion-card>
+
+<ion-card (tap)='Ntap($event)'>
+    <ion-item>
+      Tocado: {{tap}}
+  </ion-item>
+</ion-card>
+
+<ion-card (press)='Npress($event)'>
+    <ion-item>
+      Presionado: {{press}}
+  </ion-item>
+</ion-card>
+
+<ion-card (pan)='Npan($event)'>
+    <ion-item>
+      Arrastrado: {{pan}}
+  </ion-item>
+</ion-card>
+
+</ion-content>
