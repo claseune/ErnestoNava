@@ -38,7 +38,7 @@ export class ListasPage {
   delete(key, name){
     let deleteToast = this.toastCtrl.create({
       position: 'top',
-      message: name + 'ha sido borrado',
+      message: name + ' ha sido borrado',
       duration: 4000
     });
     let deleteAlert = this.alertCtrl.create({

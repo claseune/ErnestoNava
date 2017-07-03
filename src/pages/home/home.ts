@@ -6,6 +6,7 @@ import { ListasPage } from '../listas/listas';
 import { LoginPage } from '../login/login';
 import { RegistroPage } from '../registro/registro';
 import { LoginFacebookPage } from '../login-facebook/login-facebook';
+import { CamaraPage } from '../camara/camara';
 
 @Component({
   selector: 'page-home',
@@ -34,6 +35,9 @@ export class HomePage {
   }
   goRegistro(){
     this.navCtrl.push(RegistroPage);
+  }
+  goCamara(){
+    this.navCtrl.push(CamaraPage);
   }
 
 }

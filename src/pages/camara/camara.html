@@ -1,0 +1,19 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>camara</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  
+  <ion-item *ngIf="myimage">
+  <img [src]="myimage">
+  </ion-item>
+  <button ion-button (click)="openCamera()" block>
+    <ion-icon name = "camera"></ion-icon>
+    Abrir Camara</button>
+
+</ion-content>

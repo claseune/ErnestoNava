@@ -36,7 +36,8 @@ public showToast(text, time) {
 
 save(){
     if(this.formularioFormData.valid){
-      this.records.push(this.formularioFormData.value)
+      this.records.push(this.formularioFormData.value);
+      this.showToast('Se ha guardado correctamente', 3000);
     }else{
       this.showToast('No ha llenado la información', 3000);
       console.error('No ha llenado la información')

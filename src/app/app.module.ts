@@ -3,6 +3,7 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
+import { Camera, CameraOptions } from '@ionic-native/camera';
 
 import * as firebase from 'firebase';
 import { AngularFireModule } from 'angularfire2';
@@ -19,6 +20,7 @@ import { LoginPage } from '../pages/login/login';
 import { RegistroPage } from '../pages/registro/registro';
 import { EditPage } from '../pages/edit/edit';
 import { LoginFacebookPage } from '../pages/login-facebook/login-facebook';
+import { CamaraPage } from '../pages/camara/camara';
 
 export const config = {
     apiKey: "AIzaSyBqi2TQSb6-4jsFXU5boOUz3ug7k9oFCCw",
@@ -40,7 +42,8 @@ export const config = {
     LoginPage,
     RegistroPage,
     EditPage,
-    LoginFacebookPage
+    LoginFacebookPage,
+    CamaraPage
   ],
   imports: [
     BrowserModule,
@@ -59,11 +62,13 @@ export const config = {
     LoginPage,
     RegistroPage,
     EditPage,
-    LoginFacebookPage
+    LoginFacebookPage,
+    CamaraPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    Camera,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
 
   ]
