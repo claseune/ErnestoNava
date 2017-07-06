@@ -7,6 +7,7 @@ import { LoginPage } from '../login/login';
 import { RegistroPage } from '../registro/registro';
 import { LoginFacebookPage } from '../login-facebook/login-facebook';
 import { CamaraPage } from '../camara/camara';
+import { GpsPage } from '../gps/gps';
 
 @Component({
   selector: 'page-home',
@@ -38,6 +39,9 @@ export class HomePage {
   }
   goCamara(){
     this.navCtrl.push(CamaraPage);
+  }
+  goGps(){
+    this.navCtrl.push(GpsPage);
   }
 
 }
