@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Geolocation, GeolocationOptions } from '@ionic-native/geolocation';
-import { GoogleMaps, GoogleMap, GoogleMapsEvent, LatLng, CameraPosition, Marker, MarkerOptions } from '@ionic-native/google-maps';
+import { GoogleMaps, GoogleMap, MyLocationOptions, GoogleMapsEvent, LatLng, CameraPosition, Marker, MarkerOptions } from '@ionic-native/google-maps';
 
 
 @IonicPage()
@@ -11,12 +11,14 @@ import { GoogleMaps, GoogleMap, GoogleMapsEvent, LatLng, CameraPosition, Marker,
 })
 export class GpsPage {
   longData: number; latData: number;
+  mik: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public geolocation:Geolocation, public gMaps: GoogleMaps) {
   }
 
   ionViewWillEnter(){
-    let options: GeolocationOptions = {
+    this.loadMap();
+    /*let options: GeolocationOptions = {
       enableHighAccuracy: true
     }
 
@@ -25,7 +27,7 @@ export class GpsPage {
       this.loadMap();
     }).catch((error) => {
       alert(error)
-  });
+  });*/
 
 }
 
@@ -39,34 +41,38 @@ loadMap() {
      console.log('Map is ready!');
      // Now you can add elements to the map like the marker
 
-     let watch = this.geolocation.watchPosition();
-     watch.subscribe((data) => {
-       console.log('data: ', data)
-       this.longData = data.coords.longitude;
-       this.latData = data.coords.latitude;
+     let options: MyLocationOptions = {
+      enableHighAccuracy: true
+    }
+    map.getMyLocation(options).then((resp)=>{
+    console.log('resp: ', resp)
+       this.longData = resp.latLng.lng;
+       this.latData = resp.latLng.lat;
 
-       let ionic: LatLng = new LatLng(this.latData, this.longData);
+       //let ionic: LatLng = new LatLng(this.latData, this.longData);
+       
+       this.mik=resp.latLng;
 
        let position: CameraPosition = {
-        target: ionic,
+        target: this.mik,
         zoom: 18,
         tilt: 30
       };
       // move the map's camera to position
       map.moveCamera(position);
       
-      let markerOptions: MarkerOptions = {
-      position: ionic,
+      /*let markerOptions: MarkerOptions = {
+      position: this.mik,
       title: 'Ionic'
     };
 
     map.addMarker(markerOptions)
       .then((marker: Marker) => {
         marker.showInfoWindow();
-      })   
-     });
-   }
- );
+      })*/
+    })
+    map.setMyLocationEnabled(true);
+   });
  }
 
   ionViewDidLoad() {
