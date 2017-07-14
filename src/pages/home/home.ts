@@ -8,6 +8,8 @@ import { RegistroPage } from '../registro/registro';
 import { LoginFacebookPage } from '../login-facebook/login-facebook';
 import { CamaraPage } from '../camara/camara';
 import { GpsPage } from '../gps/gps';
+import { NotificationPage } from '../notification/notification';
+import { Notifacion2Page } from '../notifacion2/notifacion2';
 
 @Component({
   selector: 'page-home',
@@ -42,6 +44,12 @@ export class HomePage {
   }
   goGps(){
     this.navCtrl.push(GpsPage);
+  }
+  goNotific(){
+    this.navCtrl.push(NotificationPage);
+  }
+  goNotific2(){
+    this.navCtrl.push(Notifacion2Page);
   }
 
 }

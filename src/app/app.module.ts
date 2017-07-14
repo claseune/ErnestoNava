@@ -6,6 +6,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { Geolocation } from '@ionic-native/geolocation';
 import { GoogleMaps } from '@ionic-native/google-maps';
+import { LocalNotifications } from '@ionic-native/local-notifications';
 
 import * as firebase from 'firebase';
 import { AngularFireModule } from 'angularfire2';
@@ -24,6 +25,8 @@ import { EditPage } from '../pages/edit/edit';
 import { LoginFacebookPage } from '../pages/login-facebook/login-facebook';
 import { CamaraPage } from '../pages/camara/camara';
 import { GpsPage } from '../pages/gps/gps';
+import { NotificationPage } from '../pages/notification/notification';
+import { Notifacion2Page } from '../pages/notifacion2/notifacion2';
 
 export const config = {
     apiKey: "AIzaSyBqi2TQSb6-4jsFXU5boOUz3ug7k9oFCCw",
@@ -47,7 +50,9 @@ export const config = {
     EditPage,
     LoginFacebookPage,
     CamaraPage,
-    GpsPage
+    GpsPage,
+    NotificationPage,
+    Notifacion2Page
   ],
   imports: [
     BrowserModule,
@@ -68,7 +73,9 @@ export const config = {
     EditPage,
     LoginFacebookPage,
     CamaraPage,
-    GpsPage
+    GpsPage,
+    NotificationPage,
+    Notifacion2Page
   ],
   providers: [
     StatusBar,
@@ -76,6 +83,7 @@ export const config = {
     Camera,
     Geolocation,
     GoogleMaps,
+    LocalNotifications,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
 
   ]
