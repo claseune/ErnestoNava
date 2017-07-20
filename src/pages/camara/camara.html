@@ -16,4 +16,11 @@
     <ion-icon name = "camera"></ion-icon>
     Abrir Camara</button>
 
+    <ion-card *ngFor="let picture of pictures"> 
+    <img [src]="picture"/>
+    <div class="card-title">Ernesto</div>
+    <div class="card-subtitle">Fotos</div>
+  </ion-card>
+      
+
 </ion-content>

@@ -33,7 +33,7 @@ export const config = {
     authDomain: "compilacion1.firebaseapp.com",
     databaseURL: "https://compilacion1.firebaseio.com",
     projectId: "compilacion1",
-    storageBucket: "",
+    storageBucket: "compilacion1.appspot.com",
     messagingSenderId: "464960867045"
   };
   firebase.initializeApp(config);
