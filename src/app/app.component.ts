@@ -10,6 +10,7 @@ import { ListasPage } from '../pages/listas/listas';
 import { LoginPage } from '../pages/login/login';
 import { RegistroPage } from '../pages/registro/registro';
 import { EditPage } from '../pages/edit/edit';
+import { ColorpikerPage } from '../pages/colorpiker/colorpiker';
 
 @Component({
   templateUrl: 'app.html'

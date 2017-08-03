@@ -20,6 +20,7 @@
         "@angular/http": "4.1.3",
         "@angular/platform-browser": "4.1.3",
         "@angular/platform-browser-dynamic": "4.1.3",
+        "@ionic-native/bluetooth-serial": "^4.1.0",
         "@ionic-native/camera": "^3.12.1",
         "@ionic-native/core": "3.10.2",
         "@ionic-native/geolocation": "^3.13.1",
@@ -31,6 +32,7 @@
         "angularfire2": "^4.0.0-rc.1",
         "cordova-android": "^6.2.3",
         "cordova-plugin-app-event": "file:node_modules\\cordova-plugin-app-event",
+        "cordova-plugin-bluetooth-serial": "^0.4.7",
         "cordova-plugin-camera": "^2.4.1",
         "cordova-plugin-compat": "^1.1.0",
         "cordova-plugin-console": "^1.0.5",
@@ -46,14 +48,16 @@
         "ionic-plugin-keyboard": "^2.2.1",
         "ionicons": "3.0.0",
         "moment": "^2.18.1",
+        "ngx-color-picker": "^4.1.0",
         "rxjs": "5.4.0",
         "sw-toolbox": "3.6.0",
         "zone.js": "0.8.12"
     },
     "devDependencies": {
         "@ionic/app-scripts": "1.3.7",
-        "@ionic/cli-plugin-cordova": "1.4.1",
-        "@ionic/cli-plugin-ionic-angular": "1.3.2",
+        "@ionic/cli-plugin-cordova": "1.5.0",
+        "@ionic/cli-plugin-ionic-angular": "1.4.0",
+        "ionic": "3.6.0",
         "typescript": "2.3.3"
     },
     "description": "An Ionic project",
@@ -70,7 +74,8 @@
             "cordova-plugin-googlemaps": {
                 "API_KEY_FOR_ANDROID": "AIzaSyAntksg5Srm8yHYyM7xnLJjYjktaE0s58M"
             },
-            "de.appplant.cordova.plugin.local-notification": {}
+            "de.appplant.cordova.plugin.local-notification": {},
+            "cordova-plugin-bluetooth-serial": {}
         },
         "platforms": [
             "android"

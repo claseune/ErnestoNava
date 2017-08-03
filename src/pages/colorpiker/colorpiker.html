@@ -1,0 +1,20 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Color Picker</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <!--<input [(colorPicker)]="color" [style.background]="color"/>-->
+<input class="myInput"  [cpWidth]="'auto'" [(colorPicker)]="color" [style.background]="color" [value]="color" [cpPosition]="'bottom'" [cpOutputFormat]="'rgba'" (colorPickerChange) = "data=onItemChange($event); color=$event" />
+<button (click)="setColor()" ion-button icon-right block>
+    Set color
+    <!--<ion-icon name="sunny"></ion-icon>-->
+  </button>
+</ion-content>
+
+
+

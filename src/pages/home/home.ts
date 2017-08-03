@@ -10,6 +10,7 @@ import { CamaraPage } from '../camara/camara';
 import { GpsPage } from '../gps/gps';
 import { NotificationPage } from '../notification/notification';
 import { Notifacion2Page } from '../notifacion2/notifacion2';
+import { BluetoothSerialPage } from '../bluetooth-serial/bluetooth-serial';
 
 @Component({
   selector: 'page-home',
@@ -50,6 +51,9 @@ export class HomePage {
   }
   goNotific2(){
     this.navCtrl.push(Notifacion2Page);
+  }
+  goBlue(){
+    this.navCtrl.push(BluetoothSerialPage);
   }
 
 }

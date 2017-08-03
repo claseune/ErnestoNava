@@ -7,6 +7,8 @@ import { Camera, CameraOptions } from '@ionic-native/camera';
 import { Geolocation } from '@ionic-native/geolocation';
 import { GoogleMaps } from '@ionic-native/google-maps';
 import { LocalNotifications } from '@ionic-native/local-notifications';
+import { BluetoothSerial } from '@ionic-native/bluetooth-serial';
+import { ColorPickerModule } from 'ngx-color-picker';
 
 import * as firebase from 'firebase';
 import { AngularFireModule } from 'angularfire2';
@@ -27,6 +29,8 @@ import { CamaraPage } from '../pages/camara/camara';
 import { GpsPage } from '../pages/gps/gps';
 import { NotificationPage } from '../pages/notification/notification';
 import { Notifacion2Page } from '../pages/notifacion2/notifacion2';
+import { BluetoothSerialPage } from '../pages/bluetooth-serial/bluetooth-serial';
+import { ColorpikerPage } from '../pages/colorpiker/colorpiker';
 
 export const config = {
     apiKey: "AIzaSyBqi2TQSb6-4jsFXU5boOUz3ug7k9oFCCw",
@@ -52,14 +56,17 @@ export const config = {
     CamaraPage,
     GpsPage,
     NotificationPage,
-    Notifacion2Page
+    Notifacion2Page,
+    BluetoothSerialPage,
+    ColorpikerPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     AngularFireDatabaseModule,
     AngularFireModule.initializeApp(config),
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    ColorPickerModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -75,7 +82,9 @@ export const config = {
     CamaraPage,
     GpsPage,
     NotificationPage,
-    Notifacion2Page
+    Notifacion2Page,
+    BluetoothSerialPage,
+    ColorpikerPage
   ],
   providers: [
     StatusBar,
@@ -84,6 +93,7 @@ export const config = {
     Geolocation,
     GoogleMaps,
     LocalNotifications,
+    BluetoothSerial,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
 
   ]
